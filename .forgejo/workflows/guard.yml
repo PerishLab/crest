@@ -1,0 +1,43 @@
+name: guard
+
+on:
+  pull_request:
+  push:
+    branches: [main, "release/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: guard-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    runs-on: docker
+    container: git.perish.top/perishfire/images/forge@sha256:e952adc3442568f415668a72d84e5efa80c56ecc4df7847d41e87b97c15f588d
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install stable Ectropy
+        uses: PerishLab/actions/setup-binary@main
+        env:
+          PERISH_SETUP_PRODUCT: ectropy
+
+      - name: Install stable Plumb
+        uses: PerishLab/actions/setup-binary@main
+        env:
+          PERISH_SETUP_PRODUCT: plumb
+
+      - name: Install dependencies
+        run: |
+          set -eu
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Guard
+        run: |
+          set -eu
+          pnpm check
+          pnpm typecheck
+          pnpm test
+          plumb doctor .
+          ectropy .

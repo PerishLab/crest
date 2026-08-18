@@ -1,0 +1,4 @@
+[[document]]
+strategy = "agent"
+source = [{ path = ".", seal = "98859af40d17e112313126eaa8d95da79ba08882f3ceed7c0c32b57d7bf06113" }]
+target-seal = "a309a310fcef3712d5dfe537c12eb554f631260004dd0aa061128aaf6f18fc5f"
