@@ -1,0 +1,27 @@
+{
+	"name": "@perish/crest",
+	"version": "0.1.0",
+	"license": "MIT",
+	"type": "module",
+	"files": [
+		"src"
+	],
+	"exports": {
+		"./crest": "./src/crest.ts"
+	},
+	"scripts": {
+		"check": "biome check .",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"look": "LOOK=1 vitest run"
+	},
+	"devDependencies": {
+		"@types/node": "24.10.1",
+		"typescript": "5.9.3",
+		"vitest": "4.1.10"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://git.perish.top/api/packages/PerishLab/npm/"
+	}
+}

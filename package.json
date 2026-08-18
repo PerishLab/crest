@@ -1,0 +1,17 @@
+{
+	"name": "crest",
+	"private": true,
+	"engines": {
+		"node": ">=24"
+	},
+	"packageManager": "pnpm@11.13.0",
+	"scripts": {
+		"check": "biome check .",
+		"typecheck": "pnpm -r typecheck",
+		"test": "pnpm -r test",
+		"look": "pnpm -r look"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.3"
+	}
+}

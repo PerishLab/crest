@@ -1,0 +1,48 @@
+[comment]
+allow = false
+
+[[grant]]
+paths = [
+    "packages/*/tests/**/*.test.ts",
+    "packages/*/tests/**/*.test.tsx",
+]
+syntax = "environment"
+
+[[grant]]
+paths = [
+    "packages/*/tests/**/*.test.ts",
+    "packages/*/tests/**/*.test.tsx",
+]
+syntax = "test"
+
+[limit]
+block = 4
+fanout = 10
+file = 300
+markup = 8
+param = 4
+path = 4
+
+[module]
+roots = [
+    "packages/*/lib",
+    "packages/*/src",
+    "packages/*/tests",
+]
+
+[scan]
+exclude = [
+    "**/dist/**",
+    "**/node_modules/**",
+]
+include = [
+    "packages/**/*.css",
+    "packages/**/*.scss",
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+]
+
+[vocabulary]
+
+[word]
+single = true
