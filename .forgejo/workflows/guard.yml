@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Seat pnpm store outside source
+        run: echo "PNPM_CONFIG_STORE_DIR=$RUNNER_TEMP/pnpm-store" >> "$GITHUB_ENV"
+
       - name: Install stable Ectropy
         uses: PerishLab/actions/setup-binary@main
         env:
@@ -31,7 +34,7 @@ jobs:
         run: |
           set -eu
           corepack enable
-          pnpm install --frozen-lockfile
+          pnpm install --frozen-lockfile --store-dir "$RUNNER_TEMP/pnpm-store"
 
       - name: Guard
         run: |
