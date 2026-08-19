@@ -1,4 +1,8 @@
+[release.npm]
+registry = "https://git.perish.top/api/packages/PerishLab/npm/"
+packages = ["@perish/crest"]
+
 [[document]]
 strategy = "agent"
-source = [{ path = ".", seal = "e952e7c831ac9e979f114acf829682e97faf19cfe477172a5f821fc008a23b46" }]
-target-seal = "a309a310fcef3712d5dfe537c12eb554f631260004dd0aa061128aaf6f18fc5f"
+source = [{ path = ".", seal = "dba08c66c2b6af91e1920195fcd6606c8223e7e33b72f7099e7afb129e7cbf10" }]
+target-seal = "c7b0c30920d9a2632b7d33380c366821d1f50d3fb9d8d01f6e106a7b410ee3eb"

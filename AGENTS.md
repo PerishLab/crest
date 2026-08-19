@@ -48,10 +48,18 @@ inside a themed surface, and this repository is what makes it wrong: a favicon,
 an open graph card and a readme badge have no language to inherit from. Any
 bearing without a surface must be handed a colour rather than left to inherit.
 
+## Release
+
+`plumb.toml` declares an npm attachment and no binary shape, which is the whole
+declaration a source-only package needs: no product, no authority, no target.
+The lanes are rendered from it by `plumb lane --write` and must never be edited
+by hand.
+
 ## Guard
 
 Run `pnpm check`, `pnpm typecheck`, `pnpm test`, `plumb doctor .`, and
-`ectropy .`. Verify by exit code.
+`ectropy .`. Verify by exit code. The rendered guard lane runs the same work
+through `pnpm biome ci .`, `pnpm -r exec tsc --noEmit` and `pnpm -r test`.
 
 `pnpm look` is the browser lane and is not in the guard chain. It measures what
 only a renderer can answer: that every mark stands inside the hold the base
