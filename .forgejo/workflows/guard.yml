@@ -1,4 +1,5 @@
 name: guard
+# depot-sync/v1
 
 on:
   pull_request:
@@ -36,6 +37,11 @@ jobs:
           curl -fsSL https://releases.plumb.perish.uk/manage.sh | sh
           printf '%s\n' "$HOME/.local/bin" >> "$GITHUB_PATH"
 
+      - name: Sync the Plumb depot
+        run: |
+          set -eu
+          plumb depot sync
+
       - name: Seat the package store outside the source
         run: echo "PNPM_CONFIG_STORE_DIR=$RUNNER_TEMP/pnpm-store" >> "$GITHUB_ENV"
       - name: Install declared packages
@@ -44,12 +50,20 @@ jobs:
           corepack enable
           pnpm install --frozen-lockfile
 
-      - name: Guard
+      - name: Guard web
         run: |
           set -eu
           pnpm biome ci .
           pnpm -r exec tsc --noEmit
           pnpm -r test
+
+      - name: Guard plumb
+        run: |
+          set -eu
           plumb doctor .
+
+      - name: Guard ectropy
+        run: |
+          set -eu
           ectropy .
 

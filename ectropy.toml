@@ -6,14 +6,14 @@ paths = [
     "packages/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.tsx",
 ]
-syntax = "environment"
+syntax = "test"
 
 [[grant]]
 paths = [
     "packages/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.tsx",
 ]
-syntax = "test"
+syntax = "environment"
 
 [limit]
 block = 4
@@ -21,7 +21,7 @@ fanout = 10
 file = 300
 markup = 8
 param = 4
-path = 4
+path = 3
 
 [module]
 roots = [
