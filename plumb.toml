@@ -1,8 +1,35 @@
+[layout]
+
+[[layout.seat]]
+path = "packages/*"
+anchor = ["package.json"]
+note = "Publishable Node packages."
+
+[[layout.seat]]
+path = ".forgejo"
+note = "The canonical forge namespace."
+
+[[layout.seat]]
+path = ".plumb"
+note = "Release datum and Plumb-owned affirmation records."
+
+[[layout.file]]
+name = ["AGENTS.md"]
+rule = ["rule://seat/affirmed"]
+note = "The repository entrypoint is affirmed against its governed faces."
+
+[[layout.file]]
+name = ["LICENSE", ".gitignore"]
+note = "Repository identity and ignore policy."
+
+[[layout.file]]
+name = ["plumb.toml", "ectropy.toml"]
+note = "Governance declarations."
+
+[[layout.file]]
+name = ["package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "biome.json"]
+note = "The pnpm workspace anchors."
+
 [release.npm]
 registry = "https://git.perish.top/api/packages/PerishLab/npm/"
 packages = ["@perish/crest"]
-
-[[document]]
-strategy = "agent"
-source = [{ path = ".", seal = "dba08c66c2b6af91e1920195fcd6606c8223e7e33b72f7099e7afb129e7cbf10" }]
-target-seal = "c7b0c30920d9a2632b7d33380c366821d1f50d3fb9d8d01f6e106a7b410ee3eb"
