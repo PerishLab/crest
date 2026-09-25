@@ -1,6 +1,6 @@
 {
-	"name": "@perish/crest",
-	"version": "0.1.0",
+	"name": "@perishlab/crest",
+	"version": "0.0.0",
 	"license": "MIT",
 	"type": "module",
 	"files": [
@@ -21,7 +21,6 @@
 		"vitest": "4.1.10"
 	},
 	"publishConfig": {
-		"access": "public",
-		"registry": "https://git.perish.top/api/packages/PerishLab/npm/"
+		"access": "public"
 	}
 }

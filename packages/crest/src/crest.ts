@@ -20,7 +20,7 @@ export const marks: Record<string, string[]> = {
 
 export const named: Record<string, { owner?: string; name: string }> = {
 	"perish.code": { name: "perish.code" },
-	design: { owner: "@perish/", name: "design" },
+	design: { owner: "@perishlab/", name: "design" },
 	plumb: { name: "plumb" },
 	concord: { name: "concord" },
 };

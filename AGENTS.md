@@ -5,13 +5,13 @@ one mark per product, and the axes along which either may vary.
 
 ## Identity
 
-- `packages/crest` publishes `@perish/crest`. It is pure source. It knows
+- `packages/crest` publishes `@perishlab/crest`. It is pure source. It knows
   nothing of Svelte, of a design system, or of a renderer, and it never will.
-- It exists apart from `@perish/design` because the two grow along different
+- It exists apart from `@perishlab/design` because the two grow along different
   axes and answer to opposite obligations. A design system grows by look times
   component and **must** change when the language changes; a brand grows by
   product and **must not**. Filed together, the crest is read as a look.
-- The same argument split `@perish/sign` out of the design package one level
+- The same argument split `@perishlab/sign` out of the design package one level
   down: shapes grow by system times preference, generators do not.
 
 ## Shape
@@ -50,16 +50,22 @@ bearing without a surface must be handed a colour rather than left to inherit.
 
 ## Release
 
-`plumb.toml` declares an npm attachment and no binary shape, which is the whole
-declaration a source-only package needs: no product, no authority, no target.
-The lanes are rendered from it by `plumb lane --write` and must never be edited
-by hand.
+`plumb.toml` declares the product `crest`, its authority and an npm attachment,
+and no binary shape: `@perishlab/crest` is the one thing that publishes, to
+GitHub Packages, and `.npmrc` maps the scope there. The package declares version
+`0.0.0`. A release follows Plumb's lifecycle: `plumb release open` cuts
+`release/<version>` from a guarded `main`, `plumb release stamp` marks it, and
+`plumb ship dispatch` hands the marker to wharf, which stamps the version into
+the package and publishes it. A stable's changelog is consigned to the Depot
+with `plumb depot consign --kind changelog`; `plumb release owed` lists what is
+still owed.
 
 ## Guard
 
 Run `pnpm check`, `pnpm typecheck`, `pnpm test`, `plumb doctor .`, and
-`ectropy .`. Verify by exit code. The rendered guard lane runs the same work
-through `pnpm biome ci .`, `pnpm -r exec tsc --noEmit` and `pnpm -r test`.
+`ectropy .`. Verify by exit code. `plumb configuration install` projects the
+guard hooks, and every commit carries the proof Plumb's guard takes over the
+exact staged tree.
 
 `pnpm look` is the browser lane and is not in the guard chain. It measures what
 only a renderer can answer: that every mark stands inside the hold the base
