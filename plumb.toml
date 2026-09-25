@@ -5,31 +5,15 @@ path = "packages/*"
 anchor = ["package.json"]
 note = "Publishable Node packages."
 
-[[layout.seat]]
-path = ".forgejo"
-note = "The canonical forge namespace."
-
-[[layout.seat]]
-path = ".plumb"
-note = "Release datum and Plumb-owned affirmation records."
-
 [[layout.file]]
-name = ["AGENTS.md"]
-rule = ["rule://seat/affirmed"]
-note = "The repository entrypoint is affirmed against its governed faces."
-
-[[layout.file]]
-name = ["LICENSE", ".gitignore"]
-note = "Repository identity and ignore policy."
-
-[[layout.file]]
-name = ["plumb.toml", "ectropy.toml"]
-note = "Governance declarations."
-
-[[layout.file]]
-name = ["package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "biome.json"]
+name = ["package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "biome.json", ".npmrc"]
 note = "The pnpm workspace anchors."
 
+[release]
+product = "crest"
+authority = "https://releases.crest.perish.uk"
+skill = false
+
 [release.npm]
-registry = "https://git.perish.top/api/packages/PerishLab/npm/"
-packages = ["@perish/crest"]
+registry = "https://npm.pkg.github.com/"
+packages = ["@perishlab/crest"]
