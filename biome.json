@@ -6,7 +6,7 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"includes": ["**", "!.runseal", "!.forgejo"]
+		"includes": ["**", "!.runseal"]
 	},
 	"formatter": {
 		"enabled": true
