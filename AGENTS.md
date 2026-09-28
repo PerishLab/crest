@@ -53,12 +53,9 @@ bearing without a surface must be handed a colour rather than left to inherit.
 `plumb.toml` declares the product `crest`, its authority and an npm attachment,
 and no binary shape: `@perishlab/crest` is the one thing that publishes, to
 GitHub Packages, and `.npmrc` maps the scope there. The package declares version
-`0.0.0`. A release follows Plumb's lifecycle: `plumb release open` cuts
-`release/<version>` from a guarded `main`, `plumb release stamp` marks it, and
-`plumb ship dispatch` hands the marker to wharf, which stamps the version into
-the package and publishes it. A stable's changelog is consigned to the Depot
-with `plumb depot consign --kind changelog`; `plumb release owed` lists what is
-still owed.
+`0.0.0`. A release follows Plumb's lifecycle (`plumb release --help`); wharf stamps the
+version into the package and publishes it. A stable's changelog goes to the
+Depot.
 
 ## Guard
 
