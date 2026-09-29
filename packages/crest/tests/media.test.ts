@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { bearing, media, vector } from "@perishlab/crest/media";
 import sharp from "sharp";
 import { expect, test } from "vitest";
-import { bearing, media, vector } from "../src/media.ts";
 
 const assets = join(process.cwd(), "media");
 
