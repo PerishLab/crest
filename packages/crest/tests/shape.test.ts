@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
+import { base, hold, marks } from "@perishlab/crest/crest";
 import { expect, test } from "vitest";
-import { base, hold, marks } from "../src/crest.ts";
 
 function held(): string {
 	return `(() => {

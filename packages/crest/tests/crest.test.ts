@@ -1,4 +1,3 @@
-import { expect, test } from "vitest";
 import {
 	base,
 	clear,
@@ -7,7 +6,8 @@ import {
 	marks,
 	named,
 	palette,
-} from "../src/crest.ts";
+} from "@perishlab/crest/crest";
+import { expect, test } from "vitest";
 
 function moves(paths: string[]): number {
 	return paths.join(" ").split(/[A-Za-z]/).length - 1;
