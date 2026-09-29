@@ -28,7 +28,7 @@ renderer over them and is not built.
 | product | `perish.code`, `design`, `plumb`, `concord` | `marks`, `named` |
 | step | `full`, `tight` | `base` |
 | form | sign, lockup, wordtype | `crest`, `named` |
-| medium | svg, ico, png, og | nowhere yet |
+| medium | svg, png, og | `media`, `vector`, generated package media |
 
 A step is drawn, never scaled. A crest at sixteen pixels is not the same
 geometry as one at ninety six, and the law refuses a `tight` step that carries
@@ -38,15 +38,12 @@ and this one states outright.
 
 ## Colour
 
-`ink` is the brand colour and it is a placeholder with a stated origin: it is
-the accent the design system's own base language already used, not a colour
-anyone designed.
+`ink` is the brand colour. `palette` owns its dark-surface counterpart, neutral
+ground and reverse. A bearing without a surface takes these colours explicitly.
 
-The design package paints the crest in `--accent`, so it is blue in base, green
-in terminal and red in brutal. That was right while a crest only ever stood
-inside a themed surface, and this repository is what makes it wrong: a favicon,
-an open graph card and a readme badge have no language to inherit from. Any
-bearing without a surface must be handed a colour rather than left to inherit.
+No consumer redraws or recolours the crest as a design-system language. The
+media contract renders browser, touch and sharing bearings from the same base
+and product paths, then the media script materialises package assets from it.
 
 ## Release
 

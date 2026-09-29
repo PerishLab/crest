@@ -40,6 +40,39 @@ function held(): string {
 	})()`;
 }
 
+function proof(): string {
+	return `(() => {
+		const marks = ${JSON.stringify(marks)};
+		const base = ${JSON.stringify(base)};
+		const sizes = [16, 24, 32, 48, 64, 180];
+		const products = Object.keys(marks);
+		document.body.innerHTML = "";
+		document.body.style.cssText = "margin:0;background:#dde4eb;font:14px ui-monospace;color:#17202b";
+		const main = document.createElement("main");
+		main.style.cssText = "display:grid;gap:24px;padding:32px";
+		for (const ground of ["#f3f6f9", "#111820"]) {
+			const section = document.createElement("section");
+			section.style.cssText = "display:grid;grid-template-columns:repeat(6,1fr);gap:20px;padding:24px;border-radius:20px;background:" + ground;
+			for (const size of sizes) {
+				const cell = document.createElement("div");
+				cell.style.cssText = "display:grid;align-content:start;justify-items:center;gap:14px;min-height:220px;color:" + (ground === "#111820" ? "#8fc7f2" : "#2f679c");
+				const title = document.createElement("b"); title.textContent = size + "px"; cell.appendChild(title);
+				for (const product of products) {
+					const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+					svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("width", String(size)); svg.setAttribute("height", String(size));
+					const paths = size === 16 ? base.tight : [...base.full, ...marks[product]];
+					for (const d of paths) { const path = document.createElementNS("http://www.w3.org/2000/svg", "path"); path.setAttribute("d", d); svg.appendChild(path); }
+					svg.style.cssText = "fill:currentColor;fill-rule:evenodd"; cell.appendChild(svg);
+				}
+				section.appendChild(cell);
+			}
+			main.appendChild(section);
+		}
+		document.body.appendChild(main);
+		return document.documentElement.scrollHeight;
+	})()`;
+}
+
 test.skipIf(process.env.LOOK !== "1")(
 	"keeps every mark inside the hold and every base inside the frame",
 	() => {
@@ -50,6 +83,14 @@ test.skipIf(process.env.LOOK !== "1")(
 			encoding: "utf8",
 		});
 		expect(JSON.parse(JSON.parse(raw.trim()))).toEqual([]);
+		execFileSync("playwright-cli", ["--raw", "eval", proof()], {
+			stdio: "ignore",
+		});
+		execFileSync(
+			"playwright-cli",
+			["screenshot", "--filename=/tmp/crest-proof.png", "--full-page"],
+			{ stdio: "ignore" },
+		);
 	},
 	60000,
 );
