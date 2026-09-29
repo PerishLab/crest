@@ -1,21 +1,28 @@
 export const frame = 24;
 
-export const hold = { near: 4.6, far: 19.4 };
+export const hold = { near: 6.6, far: 17.4 };
 
 export const clear = 3;
 
-export const ink = "#33608f";
+export const ink = "#2f679c";
+
+export const palette = {
+	dark: "#8fc7f2",
+	ground: "#f3f6f9",
+	ink,
+	white: "#ffffff",
+};
 
 export const base = {
-	full: ["M12 1.5L22.5 12 12 22.5 1.5 12zM12 4.6L4.6 12 12 19.4 19.4 12z"],
-	tight: ["M12 2L22 12 12 22 2 12z"],
+	full: ["M12 1L23 12 12 23 1 12zM12 5.2L5.2 12 12 18.8 18.8 12z"],
+	tight: ["M12 1.5L22.5 12 12 22.5 1.5 12z"],
 };
 
 export const marks: Record<string, string[]> = {
 	"perish.code": [],
-	design: ["M12 7.5L16.5 12 12 16.5 7.5 12z"],
-	plumb: ["M9.4 8.6h5.2v2.1h-1.6v4.7h-2v-4.7H9.4z"],
-	concord: ["M12 8.2a3.8 3.8 0 100 7.6 3.8 3.8 0 000-7.6z"],
+	design: ["M12 6.8L17.2 12 12 17.2 6.8 12z"],
+	plumb: ["M8.8 8h6.4v2.6h-1.9V16h-2.6v-5.4H8.8z"],
+	concord: ["M12 7.8a4.2 4.2 0 100 8.4 4.2 4.2 0 000-8.4z"],
 };
 
 export const named: Record<string, { owner?: string; name: string }> = {
