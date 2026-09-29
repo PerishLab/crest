@@ -1,8 +1,8 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { named } from "@perishlab/crest/crest";
+import { media, vector } from "@perishlab/crest/media";
 import sharp from "sharp";
-import { named } from "../src/crest.ts";
-import { media, vector } from "../src/media.ts";
 
 const output = join(process.cwd(), "media");
 
