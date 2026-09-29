@@ -4,19 +4,24 @@
 	"license": "MIT",
 	"type": "module",
 	"files": [
+		"media",
 		"src"
 	],
 	"exports": {
-		"./crest": "./src/crest.ts"
+		"./crest": "./src/crest.ts",
+		"./media": "./src/media.ts",
+		"./media/*": "./media/*"
 	},
 	"scripts": {
 		"check": "biome check .",
+		"media": "node lib/render.ts",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"look": "LOOK=1 vitest run"
 	},
 	"devDependencies": {
 		"@types/node": "24.10.1",
+		"sharp": "0.35.5",
 		"typescript": "5.9.3",
 		"vitest": "4.1.10"
 	},

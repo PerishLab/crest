@@ -1,5 +1,13 @@
 import { expect, test } from "vitest";
-import { base, clear, crest, hold, marks, named } from "../src/crest.ts";
+import {
+	base,
+	clear,
+	crest,
+	hold,
+	marks,
+	named,
+	palette,
+} from "../src/crest.ts";
 
 function moves(paths: string[]): number {
 	return paths.join(" ").split(/[A-Za-z]/).length - 1;
@@ -38,4 +46,9 @@ test("every product the marks know is a product the names know", () => {
 test("the hold leaves the mark room the clear space respects", () => {
 	expect(hold.near).toBeGreaterThan(clear);
 	expect(hold.far).toBeLessThan(24 - clear);
+});
+
+test("crest owns explicit ink for surfaces that have no design language", () => {
+	expect(palette.ink).toBe("#2f679c");
+	expect(palette.dark).not.toBe(palette.ink);
 });
