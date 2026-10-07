@@ -1,5 +1,10 @@
 # Agents
 
+Read the canonical [PerishLab delivery governance](https://github.com/PerishLab/.github/blob/main/GOVERNANCE.md)
+at work start and again before delivery or Issue closure. That document owns
+organization-wide Issue, pull-request and acceptance policy; this file keeps
+repository-specific constraints without copying that policy.
+
 This repository owns the brand of the `perish.code` domain: one base geometry,
 one mark per product, and the axes along which either may vary.
 
