@@ -52,12 +52,17 @@ and product paths, then the media script materialises package assets from it.
 
 ## Release
 
-`apps/review` is a private local static review surface. Its dependency-free Node
+`apps/review` is a private-package static review surface. Its dependency-free Node
 build renders only the existing source geometry and labels it as a baseline,
 never a new adopted brand direction. It is outside the npm publication allowlist.
-Public material approval, a registered non-production Worker and the native Preview
-declaration remain separate integration work under #12. No Worker configuration
-is carried until that target is established; local preparation grants no deployment.
+Its initial B0-full/B0-tight, named marks, size, light/dark and context examples
+are authorized public review material. The native Preview declaration binds only
+the dedicated non-production `crest-review` Worker established in
+PerishLab/.github#78, with ordinary workers.dev deployment disabled. Preview apps
+are excluded from ordinary Worker shipping as well as npm publication.
+Configuration grants no deployment and proves no live Preview URL; operational
+integration remains separate work under #12. Private Concord Artifacts are not
+public review material.
 
 `plumb.toml` declares the product `crest`, its authority and an npm attachment,
 and no binary shape: `@perishlab/crest` is the one thing that publishes, to
