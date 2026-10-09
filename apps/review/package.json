@@ -1,0 +1,17 @@
+{
+	"name": "crest-review",
+	"private": true,
+	"type": "module",
+	"exports": {
+		"./build": "./build.ts"
+	},
+	"dependencies": {
+		"@perishlab/crest": "workspace:*"
+	},
+	"scripts": {
+		"build": "node build.ts",
+		"check": "biome check .",
+		"test": "node --test tests/build.test.ts",
+		"typecheck": "pnpm --filter @perishlab/crest exec tsc --project ../../apps/review/tsconfig.json --typeRoots ./node_modules/@types"
+	}
+}
