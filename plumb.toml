@@ -3,7 +3,7 @@
 [[layout.seat]]
 path = "apps/*"
 anchor = ["package.json"]
-note = "Private local review applications, excluded from package publication."
+note = "Private static review applications, excluded from package publication."
 
 [[layout.seat]]
 path = "packages/*"
@@ -22,3 +22,9 @@ skill = false
 [release.npm]
 registry = "https://npm.pkg.github.com/"
 packages = ["@perishlab/crest"]
+
+[preview.app.crest-review]
+path = "apps/review"
+package = "crest-review"
+provider = "cfworker"
+access = "public"
