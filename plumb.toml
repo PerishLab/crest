@@ -1,6 +1,11 @@
 [layout]
 
 [[layout.seat]]
+path = "apps/*"
+anchor = ["package.json"]
+note = "Private local review applications, excluded from package publication."
+
+[[layout.seat]]
 path = "packages/*"
 anchor = ["package.json"]
 note = "Publishable Node packages."

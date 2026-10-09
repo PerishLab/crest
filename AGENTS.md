@@ -52,6 +52,13 @@ and product paths, then the media script materialises package assets from it.
 
 ## Release
 
+`apps/review` is a private local static review surface. Its dependency-free Node
+build renders only the existing source geometry and labels it as a baseline,
+never a new adopted brand direction. It is outside the npm publication allowlist.
+Public material approval, a registered non-production Worker and the native Preview
+declaration remain separate integration work under #12. No Worker configuration
+is carried until that target is established; local preparation grants no deployment.
+
 `plumb.toml` declares the product `crest`, its authority and an npm attachment,
 and no binary shape: `@perishlab/crest` is the one thing that publishes, to
 GitHub Packages, and `.npmrc` maps the scope there. The package declares version

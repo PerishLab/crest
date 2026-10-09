@@ -3,6 +3,8 @@ allow = false
 
 [[grant]]
 paths = [
+    "apps/*/tests/**/*.test.ts",
+    "apps/*/tests/**/*.test.tsx",
     "packages/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.tsx",
 ]
@@ -10,6 +12,8 @@ syntax = "test"
 
 [[grant]]
 paths = [
+    "apps/*/tests/**/*.test.ts",
+    "apps/*/tests/**/*.test.tsx",
     "packages/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.tsx",
 ]
@@ -25,6 +29,9 @@ path = 3
 
 [module]
 roots = [
+    "apps/*",
+    "apps/*/src",
+    "apps/*/tests",
     "packages/*/lib",
     "packages/*/src",
     "packages/*/tests",
@@ -36,6 +43,10 @@ exclude = [
     "**/node_modules/**",
 ]
 include = [
+    "apps/**/*.css",
+    "apps/**/*.scss",
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
     "packages/**/*.css",
     "packages/**/*.scss",
     "packages/**/*.ts",
