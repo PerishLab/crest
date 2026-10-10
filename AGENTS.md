@@ -56,10 +56,19 @@ and product paths, then the media script materialises package assets from it.
 build renders only the existing source geometry and labels it as a baseline,
 never a new adopted brand direction. It is outside the npm publication allowlist.
 Its initial B0-full/B0-tight, named marks, size, light/dark and context examples
-are authorized public review material. The native Preview declaration binds only
-the dedicated non-production `crest-review` Worker established in
-PerishLab/.github#78, with ordinary workers.dev deployment disabled. Preview apps
-are excluded from ordinary Worker shipping as well as npm publication.
+are authorized public review material. The platform app is `crest`; its source
+path `apps/review` and private package `crest-review` are implementation details.
+Its explicit `preview`, `preview.design` and `preview.review` bindings use the
+static adaptor and the dedicated non-production `crest-development` parent
+established under PerishLab/.github#80, with ordinary workers.dev deployment
+disabled. The superseded inert `crest-review` Worker from #78 was retired;
+the private package name does not retain that provider identity. Quoted keyed
+binding names are whole lane identities, not nested TOML tables. Each binding
+names Wharf separately for authorization and publication: its trusted control
+checks caller/source/target admission, and its independent public evidence
+reader verifies immutable records. Neither name grants credentials or proves
+that a workflow is available. Lane apps are excluded from ordinary Worker
+shipping as well as npm publication.
 Configuration grants no deployment and proves no live Preview URL; operational
 integration remains separate work under #12. Private Concord Artifacts are not
 public review material.
