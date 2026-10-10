@@ -23,8 +23,39 @@ skill = false
 registry = "https://npm.pkg.github.com/"
 packages = ["@perishlab/crest"]
 
-[preview.app.crest-review]
+[lane]
+repository = "PerishLab/crest"
+
+[lane.app.crest]
 path = "apps/review"
 package = "crest-review"
+
+[lane.app.crest.mapping]
 provider = "cfworker"
 access = "public"
+account = "a6776d8a453d1b84d01576245a9c4f8d"
+resource = "crest-development"
+
+[lane.app.crest.binding.preview]
+adaptor = "static"
+capabilities = ["inspect", "build", "deploy", "dispose"]
+
+[lane.app.crest.binding.preview.authorities]
+authorization = "wharf"
+publication = "wharf"
+
+[lane.app.crest.binding."preview.design"]
+adaptor = "static"
+capabilities = ["inspect", "build", "deploy", "dispose"]
+
+[lane.app.crest.binding."preview.design".authorities]
+authorization = "wharf"
+publication = "wharf"
+
+[lane.app.crest.binding."preview.review"]
+adaptor = "static"
+capabilities = ["inspect", "build", "deploy", "dispose"]
+
+[lane.app.crest.binding."preview.review".authorities]
+authorization = "wharf"
+publication = "wharf"
