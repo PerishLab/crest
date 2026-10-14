@@ -14,8 +14,10 @@ note = "Publishable Node packages."
 name = ["package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "biome.json", ".npmrc"]
 note = "The pnpm workspace anchors."
 
+[identity]
+ns = "crest"
+
 [release]
-product = "crest"
 authority = "https://releases.crest.perish.uk"
 skill = false
 
