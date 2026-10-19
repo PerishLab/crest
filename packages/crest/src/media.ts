@@ -37,7 +37,12 @@ export function vector(name: string, medium: Medium): string {
 	const drawn = crest(name, step)
 		.map((path) => `<path d="${path}"/>`)
 		.join("");
-	if (medium === "touch") return touch(drawn);
-	if (medium === "share") return share(name, drawn);
-	return icon(drawn);
+	switch (medium) {
+		case "touch":
+			return touch(drawn);
+		case "share":
+			return share(name, drawn);
+		default:
+			return icon(drawn);
+	}
 }

@@ -46,18 +46,18 @@ capabilities = ["inspect", "build", "deploy", "dispose"]
 authorization = "wharf"
 publication = "wharf"
 
-[lane.app.crest.binding."preview.design"]
+[lane.app.crest.binding.design]
 adaptor = "static"
 capabilities = ["inspect", "build", "deploy", "dispose"]
 
-[lane.app.crest.binding."preview.design".authorities]
+[lane.app.crest.binding.design.authorities]
 authorization = "wharf"
 publication = "wharf"
 
-[lane.app.crest.binding."preview.review"]
+[lane.app.crest.binding.review]
 adaptor = "static"
 capabilities = ["inspect", "build", "deploy", "dispose"]
 
-[lane.app.crest.binding."preview.review".authorities]
+[lane.app.crest.binding.review.authorities]
 authorization = "wharf"
 publication = "wharf"

@@ -58,12 +58,14 @@ never a new adopted brand direction. It is outside the npm publication allowlist
 Its initial B0-full/B0-tight, named marks, size, light/dark and context examples
 are authorized public review material. The platform app is `crest`; its source
 path `apps/review` and private package `crest-review` are implementation details.
-Its explicit `preview`, `preview.design` and `preview.review` bindings use the
+Its explicit `preview`, `design` and `review` bindings use the
 static adaptor and the dedicated non-production `crest-development` parent
 established under PerishLab/.github#80, with ordinary workers.dev deployment
 disabled. The superseded inert `crest-review` Worker from #78 was retired;
-the private package name does not retain that provider identity. Quoted keyed
-binding names are whole lane identities, not nested TOML tables. Each binding
+the private package name does not retain that provider identity. Each flat name
+is an independent lane; `preview` has no family, key, default or fallback role.
+Historical registrations, unknown reservations and provider resources are not
+renamed, aliased, replayed or migrated by a source binding change. Each binding
 names Wharf separately for authorization and publication: its trusted control
 checks caller/source/target admission, and its independent public evidence
 reader verifies immutable records. Neither name grants credentials or proves
