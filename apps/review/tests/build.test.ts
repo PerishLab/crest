@@ -15,7 +15,7 @@ test("build carries baseline geometry, actual sizes and truthful draft identity"
 		const page = await readFile(join(directory, "index.html"), "utf8");
 		assert.match(identity.commit, /^[a-f0-9]{40}$/);
 		assert.ok(page.includes(identity.commit));
-		assert.match(page, /尚未批准公开/);
+		assert.match(page, /品牌设计草稿 · 用于公开评审 · 不代表品牌采用/);
 		assert.match(page, /B0-full/);
 		assert.match(page, /B0-tight/);
 		for (const size of [16, 24, 32])
