@@ -14,10 +14,11 @@
 	},
 	"scripts": {
 		"check": "biome check .",
-		"media": "node lib/render.ts",
 		"typecheck": "tsc --noEmit",
-		"test": "vitest run",
-		"look": "LOOK=1 vitest run"
+		"test": "pnpm build && vitest run",
+		"look": "pnpm build && LOOK=1 vitest run",
+		"build": "node lib/render.ts",
+		"prepack": "pnpm build"
 	},
 	"devDependencies": {
 		"@types/node": "24.10.1",

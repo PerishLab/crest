@@ -48,7 +48,12 @@ ground and reverse. A bearing without a surface takes these colours explicitly.
 
 No consumer redraws or recolours the crest as a design-system language. The
 media contract renders browser, touch and sharing bearings from the same base
-and product paths, then the media script materialises package assets from it.
+and product paths, then `pnpm --filter @perishlab/crest build` materialises package assets from it.
+`packages/crest/media/` is ignored generated output. Each build replaces it
+completely; tests generate it before verification, and `prepack` generates it
+before packing. The npm package includes these ready-to-use assets under the
+existing media exports. Consumers need no rasterizer; source workspace consumers
+run the package build before reading media files.
 
 ## Release
 

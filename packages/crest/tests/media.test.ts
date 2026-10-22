@@ -1,5 +1,6 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { named } from "@perishlab/crest/crest";
 import { bearing, media, vector } from "@perishlab/crest/media";
 import sharp from "sharp";
 import { expect, test } from "vitest";
@@ -36,8 +37,15 @@ test("published assets are exact materialisations of the vector contract", async
 	const cases = [
 		{ file: "favicon-48.png", medium: "icon", name: "perish.code" },
 		{ file: "apple-touch-icon.png", medium: "touch", name: "perish.code" },
-		{ file: "og-design.png", medium: "share", name: "design" },
+		...Object.keys(named).map((name) => ({
+			file: `og-${name.replace(".", "-")}.png`,
+			medium: "share" as const,
+			name,
+		})),
 	] as const;
+	expect((await readdir(assets)).sort()).toEqual(
+		["favicon.svg", ...cases.map((item) => item.file)].sort(),
+	);
 	for (const item of cases) {
 		const size = media[item.medium];
 		const expected = await sharp(Buffer.from(vector(item.name, item.medium)))
