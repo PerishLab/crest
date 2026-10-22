@@ -5,7 +5,8 @@
 	"type": "module",
 	"files": [
 		"media",
-		"src"
+		"src/crest.ts",
+		"src/media.ts"
 	],
 	"exports": {
 		"./crest": "./src/crest.ts",
@@ -17,7 +18,7 @@
 		"typecheck": "tsc --noEmit",
 		"test": "pnpm build && vitest run",
 		"look": "pnpm build && LOOK=1 vitest run",
-		"build": "node lib/render.ts",
+		"build": "node src/lib/render.ts",
 		"prepack": "pnpm build"
 	},
 	"devDependencies": {
