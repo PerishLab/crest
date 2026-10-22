@@ -6,7 +6,10 @@
 		"allowImportingTsExtensions": true,
 		"strict": true,
 		"noEmit": true,
-		"types": ["node"]
+		"types": ["node"],
+		"lib": ["es2024", "DOM", "DOM.Iterable"],
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
 	},
-	"include": ["build.ts", "tests"]
+	"include": ["*.ts", "src/**/*.ts", "src/**/*.svelte", "tests"]
 }
