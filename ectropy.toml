@@ -4,7 +4,6 @@ allow = false
 [[grant]]
 paths = [
     "apps/*/tests/**/*.test.ts",
-    "apps/*/tests/**/*.test.tsx",
     "packages/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.tsx",
 ]
@@ -13,7 +12,6 @@ syntax = "test"
 [[grant]]
 paths = [
     "apps/*/tests/**/*.test.ts",
-    "apps/*/tests/**/*.test.tsx",
     "packages/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.tsx",
 ]
@@ -41,12 +39,13 @@ roots = [
 exclude = [
     "**/dist/**",
     "**/node_modules/**",
+    "**/.svelte-kit/**",
 ]
 include = [
     "apps/**/*.css",
     "apps/**/*.scss",
+    "apps/**/*.svelte",
     "apps/**/*.ts",
-    "apps/**/*.tsx",
     "packages/**/*.css",
     "packages/**/*.scss",
     "packages/**/*.ts",

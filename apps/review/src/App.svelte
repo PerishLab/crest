@@ -1,3 +1,28 @@
+<script lang="ts">
+import Contexts from "./Contexts.svelte";
+import Surface from "./Surface.svelte";
+
+let { source }: { source: string } = $props();
+</script>
+
+<main>
+	<header>
+		<p class="eyebrow">PERISHLAB / CREST REVIEW</p>
+		<h1>先看清，再决定</h1>
+		<p class="intro">B0 是现有 Crest 的基线，不是新提案<br />在真实尺寸和不同背景中观察它，为后续候选建立共同参照</p>
+		<p class="notice">品牌设计草稿 · 用于公开评审 · 不代表品牌采用</p>
+		<details><summary>来源与评审状态</summary><p class="source">{source}</p></details>
+	</header>
+	<Surface surface="light" />
+	<Surface surface="dark" />
+	<Contexts />
+	<footer>本页展示现有品牌基线，候选与公开授权仍由对应 Issue 跟进</footer>
+</main>
+
+<style lang="less">
+@muted: #536779;
+@paper: #f3f6f9;
+:global {
 :root {
 	font-family: ui-sans-serif, system-ui, sans-serif;
 	color: #203247;
@@ -39,11 +64,11 @@ p {
 .eyebrow {
 	font-size: 12px;
 	letter-spacing: 0.16em;
-	color: #536779;
+	color: @muted;
 }
 .intro {
 	max-width: 640px;
-	color: #536779;
+	color: @muted;
 }
 .notice {
 	font-size: 13px;
@@ -53,7 +78,7 @@ p {
 details {
 	margin-top: 24px;
 	font-size: 12px;
-	color: #536779;
+	color: @muted;
 }
 summary {
 	cursor: pointer;
@@ -68,7 +93,7 @@ summary {
 	border-radius: 20px;
 }
 .light {
-	background: #f3f6f9;
+	background: @paper;
 }
 .dark {
 	background: #14202e;
@@ -125,7 +150,7 @@ figcaption {
 	gap: 10px;
 	margin-top: 18px;
 	padding: 16px;
-	background: #f3f6f9;
+	background: @paper;
 	border-radius: 12px;
 	font-size: 13px;
 }
@@ -141,15 +166,15 @@ figcaption {
 	aspect-ratio: 1200 / 630;
 	margin-top: 18px;
 	border-radius: 12px;
-	background: #f3f6f9;
+	background: @paper;
 }
 .muted {
-	color: #536779;
+	color: @muted;
 	font-size: 12px;
 }
 footer {
 	margin-top: 48px;
-	color: #536779;
+	color: @muted;
 	font-size: 12px;
 }
 @media (max-width: 600px) {
@@ -166,3 +191,5 @@ footer {
 		width: 100%;
 	}
 }
+}
+</style>

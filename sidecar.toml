@@ -1,0 +1,14 @@
+[project]
+name = "crest"
+namespace = "crest"
+root = "."
+
+[[sidecars]]
+name = "review"
+command = "pnpm"
+args = ["--filter", "crest-review", "dev", "--host", "127.0.0.1", "--strictPort"]
+cwd = "."
+mode = "dev"
+port = 0
+env = { CREST_PORT = "{port}" }
+health_url = "http://127.0.0.1:{port}/"

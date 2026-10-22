@@ -52,8 +52,9 @@ and product paths, then the media script materialises package assets from it.
 
 ## Release
 
-`apps/review` is a private-package static review surface. Its dependency-free Node
-build renders only the existing source geometry and labels it as a baseline,
+`apps/review` is a private-package static review surface. Its Vite build prerenders
+Svelte and Less into static HTML/CSS/SVG, renders only the existing source
+geometry and labels it as a baseline,
 never a new adopted brand direction. It is outside the npm publication allowlist.
 Its initial B0-full/B0-tight, named marks, size, light/dark and context examples
 are authorized public review material. The platform app is `crest`; its source
@@ -82,7 +83,20 @@ GitHub Packages, and `.npmrc` maps the scope there. The package declares version
 version into the package and publishes it. A stable's changelog goes to the
 Depot.
 
+## Development
+
+Run the local workbench with `sidecar start review --wait` from the repository
+root. Sidecar owns its leased loopback port, lifecycle and logs; Vite owns hot
+updates. `sidecar status --format json` reports the live endpoint,
+`sidecar logs review` reads its output and `sidecar stop review` stops it.
+The private review app alone depends on Svelte, Less and Vite. Public lane
+output is prerendered without browser scripts under the existing static policy.
+
 ## Guard
+
+`svelte-check` owns template-aware types, unused declarations and accessibility
+diagnostics. Biome formats component scripts; Ectropy scans complete Svelte
+components, including their Less style blocks.
 
 Run `pnpm check`, `pnpm typecheck`, `pnpm test`, `plumb doctor .`, and
 `ectropy .`. Verify by exit code. `plumb configuration install` projects the

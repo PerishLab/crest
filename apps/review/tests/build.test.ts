@@ -26,6 +26,9 @@ test("build carries baseline geometry, actual sizes and truthful draft identity"
 			await readFile(join(directory, "favicon.svg"), "utf8"),
 			vector("perish.code", "icon"),
 		);
+		const css = await readFile(join(directory, "style.css"), "utf8");
+		assert.match(css, /#536779/);
+		assert.doesNotMatch(css, /@muted|@paper|:global/);
 		assert.deepEqual((await readdir(directory)).sort(), [
 			"favicon.svg",
 			"index.html",
