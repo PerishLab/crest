@@ -12,17 +12,6 @@
 		"build": "node build.ts",
 		"check": "biome check .",
 		"test": "node --test tests/build.test.ts",
-		"typecheck": "svelte-check --tsconfig ./tsconfig.json --config ./vite.config.ts --fail-on-warnings",
-		"dev": "vite",
-		"preview": "vite preview --host 127.0.0.1"
-	},
-	"devDependencies": {
-		"@sveltejs/vite-plugin-svelte": "7.3.1",
-		"@types/node": "24.10.1",
-		"less": "4.9.1",
-		"svelte": "5.57.2",
-		"svelte-check": "4.7.7",
-		"typescript": "5.9.3",
-		"vite": "8.3.4"
+		"typecheck": "pnpm --filter @perishlab/crest exec tsc --project ../../apps/review/tsconfig.json --typeRoots ./node_modules/@types"
 	}
 }
