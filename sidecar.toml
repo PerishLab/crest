@@ -6,7 +6,7 @@ root = "."
 [[sidecars]]
 name = "review"
 command = "pnpm"
-args = ["--filter", "crest-review", "dev", "--host", "127.0.0.1", "--strictPort"]
+args = ["--filter", "crest-review", "exec", "vite", "--host", "127.0.0.1", "--strictPort"]
 cwd = "."
 mode = "dev"
 port = 0

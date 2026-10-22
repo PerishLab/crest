@@ -89,7 +89,9 @@ Run the local workbench with `sidecar start review --wait` from the repository
 root. Sidecar owns its leased loopback port, lifecycle and logs; Vite owns hot
 updates. `sidecar status --format json` reports the live endpoint,
 `sidecar logs review` reads its output and `sidecar stop review` stops it.
-The private review app alone depends on Svelte, Less and Vite. Public lane
+The private workspace supplies Svelte, Less and Vite only for the review app.
+The registered app manifest stays stable; tooling belongs to the workspace
+development dependencies and checks. Public lane
 output is prerendered without browser scripts under the existing static policy.
 
 ## Guard
