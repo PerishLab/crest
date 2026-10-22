@@ -58,9 +58,9 @@ run the package build before reading media files.
 ## Release
 
 `apps/review` is a private-package static review surface. Its Vite build prerenders
-Svelte and Less into static HTML/CSS/SVG, renders only the existing source
-geometry and labels it as a baseline,
-never a new adopted brand direction. It is outside the npm publication allowlist.
+Svelte and Less into static HTML/CSS/SVG, renders existing source geometry as the B0 baseline and private SVG shape studies
+as explicitly unselected candidates, never an adopted brand direction.
+Shape studies stay in the review app and do not change the published brand. It is outside the npm publication allowlist.
 Its initial B0-full/B0-tight, named marks, size, light/dark and context examples
 are authorized public review material. The platform app is `crest`; its source
 path `apps/review` and private package `crest-review` are implementation details.

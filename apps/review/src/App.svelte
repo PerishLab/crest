@@ -1,4 +1,5 @@
 <script lang="ts">
+import Board from "./Board.svelte";
 import Contexts from "./Contexts.svelte";
 import Surface from "./Surface.svelte";
 
@@ -8,15 +9,18 @@ let { source }: { source: string } = $props();
 <main>
 	<header>
 		<p class="eyebrow">PERISHLAB / CREST REVIEW</p>
-		<h1>先看清，再决定</h1>
-		<p class="intro">B0 是现有 Crest 的基线，不是新提案<br />在真实尺寸和不同背景中观察它，为后续候选建立共同参照</p>
+		<h1>先看形状</h1>
+		<p class="intro">第一批 · 30 个黑白候选<br />先选出有感觉的，再沿着它继续生长。此时不需要解释为什么。</p>
 		<p class="notice">品牌设计草稿 · 用于公开评审 · 不代表品牌采用</p>
 		<details><summary>来源与评审状态</summary><p class="source">{source}</p></details>
 	</header>
-	<Surface surface="light" />
-	<Surface surface="dark" />
-	<Contexts />
-	<footer>本页展示现有品牌基线，候选与公开授权仍由对应 Issue 跟进</footer>
+	<Board />
+	<details class="baseline"><summary>查看原有 B0 基线</summary>
+		<Surface surface="light" />
+		<Surface surface="dark" />
+		<Contexts />
+	</details>
+	<footer>第一轮形状探索 · 候选尚未选定或采用</footer>
 </main>
 
 <style lang="less">
@@ -25,8 +29,8 @@ let { source }: { source: string } = $props();
 :global {
 :root {
 	font-family: ui-sans-serif, system-ui, sans-serif;
-	color: #203247;
-	background: #e9eef3;
+	color: #111;
+	background: #fafafa;
 	line-height: 1.6;
 }
 * {
