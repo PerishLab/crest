@@ -1,10 +1,15 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { named } from "@perishlab/crest/crest";
 import { media, vector } from "@perishlab/crest/media";
 import sharp from "sharp";
 
 const output = join(process.cwd(), "media");
+const manifest = JSON.parse(await readFile("package.json", "utf8"));
+if (manifest.name !== "@perishlab/crest")
+	throw new Error("Crest media build requires its package directory");
+
+await rm(output, { recursive: true, force: true });
 
 await mkdir(output, { recursive: true });
 await writeFile(
