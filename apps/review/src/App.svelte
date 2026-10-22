@@ -1,6 +1,7 @@
 <script lang="ts">
 import Board from "./Board.svelte";
 import Contexts from "./Contexts.svelte";
+import Iteration from "./Iteration.svelte";
 import Surface from "./Surface.svelte";
 
 let { source }: { source: string } = $props();
@@ -9,18 +10,19 @@ let { source }: { source: string } = $props();
 <main>
 	<header>
 		<p class="eyebrow">PERISHLAB / CREST REVIEW</p>
-		<h1>先看形状</h1>
-		<p class="intro">第一批 · 30 个黑白候选<br />先选出有感觉的，再沿着它继续生长。此时不需要解释为什么。</p>
+		<h1>沿着感觉，再走一步</h1>
+		<p class="intro">第二轮 · 18 个黑白变体<br />从 E03、A02、B02 出发。每组从原稿开始，随后是六个新变体。</p>
 		<p class="notice">品牌设计草稿 · 用于公开评审 · 不代表品牌采用</p>
 		<details><summary>来源与评审状态</summary><p class="source">{source}</p></details>
 	</header>
-	<Board />
+	<Iteration />
+	<details><summary>查看第一批 30 个候选</summary><Board /></details>
 	<details class="baseline"><summary>查看原有 B0 基线</summary>
 		<Surface surface="light" />
 		<Surface surface="dark" />
 		<Contexts />
 	</details>
-	<footer>第一轮形状探索 · 候选尚未选定或采用</footer>
+	<footer>第二轮形状探索 · 候选尚未选定或采用</footer>
 </main>
 
 <style lang="less">
