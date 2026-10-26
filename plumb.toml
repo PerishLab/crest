@@ -61,3 +61,27 @@ capabilities = ["inspect", "build", "deploy", "dispose"]
 [lane.app.crest.binding.review.authorities]
 authorization = "wharf"
 publication = "wharf"
+
+[lane.app.crest.binding.canarya]
+adaptor = "static"
+capabilities = ["inspect", "build", "deploy", "dispose"]
+
+[lane.app.crest.binding.canarya.authorities]
+authorization = "wharf"
+publication = "wharf"
+
+[lane.app.crest.binding.canaryb]
+adaptor = "static"
+capabilities = ["inspect", "build", "deploy", "dispose"]
+
+[lane.app.crest.binding.canaryb.authorities]
+authorization = "wharf"
+publication = "wharf"
+
+[lane.app.crest.binding.canaryc]
+adaptor = "static"
+capabilities = ["inspect", "build", "deploy", "dispose"]
+
+[lane.app.crest.binding.canaryc.authorities]
+authorization = "wharf"
+publication = "wharf"
