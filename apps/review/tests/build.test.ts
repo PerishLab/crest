@@ -18,6 +18,7 @@ test("build carries baseline geometry, actual sizes and truthful draft identity"
 		assert.match(page, /品牌设计草稿 · 用于公开评审 · 不代表品牌采用/);
 		assert.match(page, /B0-full/);
 		assert.match(page, /B0-tight/);
+		assert.doesNotMatch(page, /三十个形状候选|候选 A01|id="A01"|先看形状/);
 		for (const size of [16, 24, 32])
 			assert.ok(page.includes(`width="${size}" height="${size}"`));
 		for (const path of crest("design")) assert.ok(page.includes(`d="${path}"`));

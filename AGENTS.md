@@ -64,7 +64,7 @@ Shape studies stay in the review app and do not change the published brand. It i
 Its initial B0-full/B0-tight, named marks, size, light/dark and context examples
 are authorized public review material. The platform app is `crest`; its source
 path `apps/review` and private package `crest-review` are implementation details.
-Its explicit `preview`, `design` and `review` bindings use the
+Its explicit `preview`, `design`, `review`, `canarya`, `canaryb` and `canaryc` bindings use the
 static adaptor and the dedicated non-production `crest-development` parent
 established under PerishLab/.github#80, with ordinary workers.dev deployment
 disabled. The superseded inert `crest-review` Worker from #78 was retired;
@@ -77,6 +77,11 @@ checks caller/source/target admission, and its independent public evidence
 reader verifies immutable records. Neither name grants credentials or proves
 that a workflow is available. Lane apps are excluded from ordinary Worker
 shipping as well as npm publication.
+The three `canary` names are dedicated independent lifecycle trials under
+PerishLab/.github#91. They do not reuse historical identities or settle unknown
+reservations. Static rendering uses the approved B0 baseline separately from the
+local shape-study workbench; unselected studies are not public lane material.
+New declaration generations do not migrate existing registrations.
 Configuration grants no deployment and proves no live Preview URL; operational
 integration remains separate work under #12. Private Concord Artifacts are not
 public review material.
