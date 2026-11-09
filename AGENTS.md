@@ -11,7 +11,8 @@ one mark per product, and the axes along which either may vary.
 ## Identity
 
 - `packages/crest` publishes `@perishlab/crest`. It is pure source. It knows
-  nothing of Svelte, of a design system, or of a renderer, and it never will.
+  nothing of Svelte or a design system. Crest owns the mathematical brand
+  source and its image build; consumers need neither a model runtime nor a rasterizer.
 - It exists apart from `@perishlab/design` because the two grow along different
   axes and answer to opposite obligations. A design system grows by look times
   component and **must** change when the language changes; a brand grows by
@@ -21,12 +22,40 @@ one mark per product, and the axes along which either may vary.
 
 ## Shape
 
+The adopted U22 full shape is two interrupted square rings and an organic
+brain for `perish.code`. `packages/crest/src/model` owns this mathematical
+source. Other explicitly registered products receive the official shared
+two-ring base; a shared asset is not a claim that their own center mark has
+been designed. The existing palette remains authoritative. The model builds
+full SVG and 48/96/180 PNG for light, dark and reverse surfaces. Unsupported
+products, forms, steps, media and sizes refuse rather than silently falling back.
+
+`@perishlab/crest/media/manifest.json` lists these generated U22 images with
+selection, exact/shared kind, dimensions, paths and SHA-256 digests.
+`@perishlab/crest/assets` validates this content contract and resolves exact
+requests. Its validation proves metadata consistency, not package authenticity;
+the formal package and distribution identity remain the publication authority.
+Model and file digests name content, never a self-declared stable version.
+The asset builder alone earns the narrow embed grant: it hashes the model
+resources it builds, including their canonical palette source. Tests exercise
+the published selection and materialised files rather than importing private builders.
+Downstream apps may materialise the official images unchanged; they do not
+redraw, recolour or convert the model themselves. Unknown schema, incomplete
+lists, duplicate entries and inconsistent selections refuse.
+
+This source delivery adds U22 assets alongside the explicitly retained B0
+`crest`/`media` drawing API and the existing favicon/touch/share files. Those
+legacy exports remain B0 and are not U22 fallbacks. U22 tight, new product
+centers, lockups and additional media need their own Crest construction and
+acceptance; the full image is not relabelled as tight. The confirmed decisions
+and origin are PerishLab/.github#186 and this source delivery's Crest#45.
+
 The base geometry is exported once and a product declares only its own mark, so
 a variant that redraws the base cannot be written. What is left over is
 falsifiable and is written as a law.
 
-Four axes vary a crest. Only the first three live here; the fourth is a
-renderer over them and is not built.
+The retained B0 drawing API exposes the following axes. U22 media selection
+and supported outputs are declared separately by the model and asset manifest.
 
 | Axis | Values | Held |
 |---|---|---|

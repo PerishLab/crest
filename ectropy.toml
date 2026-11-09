@@ -2,6 +2,10 @@
 allow = false
 
 [[grant]]
+paths = ["packages/crest/src/lib/assets.ts"]
+syntax = "embed"
+
+[[grant]]
 paths = [
     "apps/*/tests/**/*.test.ts",
     "packages/*/tests/**/*.test.ts",

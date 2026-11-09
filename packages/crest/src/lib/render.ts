@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { named } from "@perishlab/crest/crest";
 import { media, vector } from "@perishlab/crest/media";
 import sharp from "sharp";
+import { generate } from "./assets.ts";
 
 const output = join(process.cwd(), "media");
 const manifest = JSON.parse(await readFile("package.json", "utf8"));
@@ -32,3 +33,5 @@ for (const name of Object.keys(named)) {
 		.png()
 		.toFile(join(output, `og-${slug}.png`));
 }
+
+await generate(output);

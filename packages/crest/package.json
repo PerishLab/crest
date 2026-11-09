@@ -6,11 +6,14 @@
 	"files": [
 		"media",
 		"src/crest.ts",
-		"src/media.ts"
+		"src/media.ts",
+		"src/assets.ts",
+		"src/model"
 	],
 	"exports": {
 		"./crest": "./src/crest.ts",
 		"./media": "./src/media.ts",
+		"./assets": "./src/assets.ts",
 		"./media/*": "./media/*"
 	},
 	"scripts": {

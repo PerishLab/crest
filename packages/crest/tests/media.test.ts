@@ -44,7 +44,12 @@ test("published assets are exact materialisations of the vector contract", async
 		})),
 	] as const;
 	expect((await readdir(assets)).sort()).toEqual(
-		["favicon.svg", ...cases.map((item) => item.file)].sort(),
+		[
+			"favicon.svg",
+			"manifest.json",
+			"u22",
+			...cases.map((item) => item.file),
+		].sort(),
 	);
 	for (const item of cases) {
 		const size = media[item.medium];
