@@ -7,7 +7,6 @@
 		"media",
 		"src/crest.ts",
 		"src/media.ts",
-		"src/assets.ts",
 		"src/model",
 		"dist"
 	],

@@ -28,8 +28,12 @@ test("the actual package loads through native Node from node_modules with usable
 			seat,
 			"--strip-components=1",
 		]);
-		const source = `
+		const source = String.raw`
 import { read, asset, requests } from "@perishlab/crest/assets";
+import { readFile, access } from "node:fs/promises";
+const declaration = new URL("./assets.d.ts", import.meta.resolve("@perishlab/crest/assets"));
+const types = await readFile(declaration, "utf8");
+for (const match of types.matchAll(/from "(\.\/?[^"\n]+)"/g)) await access(new URL(match[1], declaration));
 const manifest = read((await import("@perishlab/crest/media/manifest.json", { with: { type: "json" } })).default);
 if(manifest.model.digest !== "sha256:d7c6ff6fb8ceed2b4618950e1798b59346a90d4f81d392e7a85dc5e16d85d9c1") throw new Error("Model changed");
 for (const request of requests()) asset(manifest, request);
