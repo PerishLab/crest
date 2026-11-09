@@ -8,12 +8,16 @@
 		"src/crest.ts",
 		"src/media.ts",
 		"src/assets.ts",
-		"src/model"
+		"src/model",
+		"dist"
 	],
 	"exports": {
 		"./crest": "./src/crest.ts",
 		"./media": "./src/media.ts",
-		"./assets": "./src/assets.ts",
+		"./assets": {
+			"types": "./dist/assets.d.ts",
+			"default": "./dist/assets.js"
+		},
 		"./media/*": "./media/*"
 	},
 	"scripts": {
@@ -21,7 +25,7 @@
 		"typecheck": "tsc --noEmit",
 		"test": "pnpm build && vitest run",
 		"look": "pnpm build && LOOK=1 vitest run",
-		"build": "node src/lib/render.ts",
+		"build": "tsc -p tsconfig.build.json && node src/lib/render.ts",
 		"prepack": "pnpm build"
 	},
 	"devDependencies": {

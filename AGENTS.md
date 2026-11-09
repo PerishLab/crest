@@ -30,6 +30,12 @@ been designed. The existing palette remains authoritative. The model builds
 full SVG and 48/96/180 PNG for light, dark and reverse surfaces. Unsupported
 products, forms, steps, media and sizes refuse rather than silently falling back.
 
+The public `@perishlab/crest/assets` entry ships generated JavaScript and
+declarations for native Node configuration consumers, including source-aware
+workspace loaders. Its own type check binds the selector source before building;
+consumers never install a TypeScript loader to read official image metadata.
+Crest#48 records the real node_modules regression that established this boundary.
+
 `@perishlab/crest/media/manifest.json` lists these generated U22 images with
 selection, exact/shared kind, dimensions, paths and SHA-256 digests.
 `@perishlab/crest/assets` validates this content contract and resolves exact
