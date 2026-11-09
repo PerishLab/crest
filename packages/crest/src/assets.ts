@@ -4,7 +4,7 @@ import {
 	type Surface,
 	sizes,
 	surfaces,
-} from "./model/catalog.ts";
+} from "./model/catalog.js";
 
 export type Request = {
 	product: string;

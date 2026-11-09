@@ -1,14 +1,14 @@
 import { createHash } from "node:crypto";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import sharp from "sharp";
 import {
 	type Asset,
 	descriptor,
 	type Manifest,
 	read,
 	requests,
-} from "../assets.ts";
+} from "@perishlab/crest/assets";
+import sharp from "sharp";
 import { vector } from "../model/vector.ts";
 
 function digest(bytes: string | Buffer): string {
