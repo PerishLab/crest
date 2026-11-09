@@ -6,7 +6,10 @@
 		"allowImportingTsExtensions": true,
 		"strict": true,
 		"noEmit": true,
-		"types": ["node"]
+		"types": ["node"],
+		"paths": {
+			"@perishlab/crest/assets": ["./src/assets.ts"]
+		}
 	},
 	"include": ["src", "tests"]
 }
