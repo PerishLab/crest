@@ -1,6 +1,6 @@
 <script lang="ts">
 import Shape from "./Shape.svelte";
-import { studies } from "./studies";
+import { studies } from "./studies/first";
 </script>
 
 <section class="board" aria-label="第一批三十个形状候选">
