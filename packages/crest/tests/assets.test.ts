@@ -66,6 +66,7 @@ test("only the Lab identity carries the brain, registered products receive the o
 		"ensign",
 		"codehull",
 		"plectron",
+		"locus",
 	]) {
 		const bytes = await sharp(await image(product))
 			.raw()
@@ -80,7 +81,7 @@ test("only the Lab identity carries the brain, registered products receive the o
 
 test("packaged images match every declared selection, byte digest and actual raster dimensions", async () => {
 	const catalog = await manifest();
-	expect(catalog.assets).toHaveLength(108);
+	expect(catalog.assets).toHaveLength(120);
 	for (const request of requests()) {
 		const item = asset(catalog, request);
 		const bytes = await readFile(join(root, item.file));

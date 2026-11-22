@@ -8,6 +8,7 @@ export const catalog = {
 	ensign: "shared",
 	codehull: "shared",
 	plectron: "shared",
+	locus: "shared",
 } as const;
 
 export type Product = keyof typeof catalog;

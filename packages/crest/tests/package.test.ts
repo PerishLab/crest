@@ -35,7 +35,7 @@ const declaration = new URL("./assets.d.ts", import.meta.resolve("@perishlab/cre
 const types = await readFile(declaration, "utf8");
 for (const match of types.matchAll(/from "(\.\/?[^"\n]+)"/g)) await access(new URL(match[1], declaration));
 const manifest = read((await import("@perishlab/crest/media/manifest.json", { with: { type: "json" } })).default);
-if(manifest.model.digest !== "sha256:d7c6ff6fb8ceed2b4618950e1798b59346a90d4f81d392e7a85dc5e16d85d9c1") throw new Error("Model changed");
+if(manifest.model.digest !== "sha256:55dfea2cd24096b94d74aee29bddf29a8f106084bc8d95b2c129b4d0a8eae0bf") throw new Error("Model changed");
 for (const request of requests()) asset(manifest, request);
 const request = requests()[0];
 for (const product of ["unknown", "__proto__"]) {
@@ -59,12 +59,12 @@ console.log(requests().length);
 			execFileSync(execPath, [join(root, "check.mjs")], {
 				encoding: "utf8",
 			}).trim(),
-		).toBe("108");
+		).toBe("120");
 		expect(
 			execFileSync(execPath, ["--conditions=source", join(root, "check.mjs")], {
 				encoding: "utf8",
 			}).trim(),
-		).toBe("108");
+		).toBe("120");
 		writeFileSync(
 			join(root, "check.ts"),
 			'import { asset, type Manifest, type Request } from "@perishlab/crest/assets";\nexport function select(manifest: Manifest, request: Request) { return asset(manifest, request); }\n',
