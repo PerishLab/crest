@@ -13,8 +13,11 @@ test("build carries baseline geometry, actual sizes and truthful draft identity"
 		const identity = await build(directory);
 		assert.equal(identity.private, true);
 		const page = await readFile(join(directory, "index.html"), "utf8");
+		assert.ok(identity.commit);
 		assert.match(identity.commit, /^[a-f0-9]{40}$/);
-		assert.ok(page.includes(identity.commit));
+		const label = `${identity.commit} · ${identity.dirty ? "工作区有未提交修改" : "已提交工作区"}`;
+		assert.ok(page.includes(`title="${label}"`));
+		assert.ok(page.includes(`class="source">${label}</p>`));
 		assert.match(page, /品牌设计草稿 · 用于公开评审 · 不代表品牌采用/);
 		assert.match(page, /B0-full/);
 		assert.match(page, /B0-tight/);
