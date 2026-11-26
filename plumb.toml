@@ -85,3 +85,22 @@ capabilities = ["inspect", "build", "deploy", "dispose"]
 [lane.app.crest.binding.canaryc.authorities]
 authorization = "wharf"
 publication = "wharf"
+
+[[ectropy.grant]]
+paths = ["packages/crest/src/lib/assets.ts"]
+syntax = "embed"
+
+[sidecar.project]
+name = "crest"
+namespace = "crest"
+root = "."
+
+[[sidecar.sidecars]]
+name = "review"
+command = "pnpm"
+args = ["--filter", "crest-review", "exec", "vite", "--host", "127.0.0.1", "--strictPort"]
+cwd = "."
+mode = "dev"
+port = 0
+env = { CREST_PORT = "{port}" }
+health_url = "http://127.0.0.1:{port}/"
