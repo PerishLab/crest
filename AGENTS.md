@@ -139,6 +139,24 @@ The registered app manifest stays stable; tooling belongs to the workspace
 development dependencies and checks. Public lane
 output is prerendered without browser scripts under the existing static policy.
 
+The review build accepts an optional `--source` JSON object with full
+lower-case Git `commit` and `tree` IDs. A caller with a qualified source
+checkout can pass those IDs with `pnpm --filter crest-review build --source "$identity"`. The build
+checks the exact checkout is clean and matches both IDs before and after
+bundling. Wharf currently checks its own commit and tree around the build and
+does not pass this input. The page label reports the source observation and
+carries no publication authority.
+
+Without that input, the static build observes HEAD and Git status once.
+Vite observes the checkout when the local development server starts and
+retains the local development label. Both anchor Git at the repository
+containing the app, reject discovery of a parent repository, and isolate the
+query from inherited Git variables and user/system Git settings. Git failures
+show an unknown source label during local development and unsupplied builds.
+An explicit identity with unavailable, dirty or mismatched source fails the
+build. Dirtiness includes Git-visible tracked and untracked changes and
+excludes ignored build outputs.
+
 ## Guard
 
 `svelte-check` owns template-aware types, unused declarations and accessibility

@@ -90,6 +90,14 @@ publication = "wharf"
 paths = ["packages/crest/src/lib/assets.ts"]
 syntax = "embed"
 
+[[ectropy.grant]]
+paths = ["apps/review/source.ts"]
+syntax = "embed"
+
+[[ectropy.grant]]
+paths = ["apps/review/source.ts"]
+syntax = "environment"
+
 [sidecar.project]
 name = "crest"
 namespace = "crest"
